@@ -54,7 +54,7 @@ export default {
     this.username = this.$route.params.username; //Obtiene el nombre de usuario de localstorage
     let self = this; // captura el this en axios para usarlo
     axios
-      .get("http://127.0.0.1:8000/room/Superior")
+      .get("https://seasonhotel-api.herokuapp.com/room/Superior")
       .then((response) => {     // se ejecuta cuando todo sale bien
         self.rooms = response.data;
       })

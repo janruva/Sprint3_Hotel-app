@@ -32,7 +32,7 @@ export default {
     this.username = this.$route.params.username;
     let self = this;
     axios
-      .get("http://127.0.0.1:8000/user/room/" + this.username)
+      .get("https://seasonhotel-api.herokuapp.com/user/room/" + this.username)
       .then((result) => {
         self.estado = result.data.estado;
       })
