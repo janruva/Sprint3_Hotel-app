@@ -1,8 +1,10 @@
 import vueRouter from 'vue-router'
-import User from './components/User'
 import Home from './components/Home'
+import User from './components/User'
+import UserAuth from './components/UserAuth'
 import UserRegistro from './components/UserRegistro'
 import TipoRoom from './components/TipoRoom'
+import Temporada from './components/Temporada'
 import App from './App'
 
 const router = new vueRouter({
@@ -33,9 +35,19 @@ const router = new vueRouter({
     },    
 
     {
-        path: '/room/Superior',
+        path: '/user/tipo_room/:username',
         name: "tipo_room",
         component: TipoRoom
+    },
+    {
+        path: '/user/auth',
+        name: "user_auth",
+        component: UserAuth
+    },
+    {
+        path: '/user/season/:username',
+        name: "temporada",
+        component: Temporada
     },
     ]
     })

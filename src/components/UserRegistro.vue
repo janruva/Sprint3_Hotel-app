@@ -54,6 +54,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: right;
+  font-weight: bold;
 }
 #UserRegistro span {
   color: crimson;

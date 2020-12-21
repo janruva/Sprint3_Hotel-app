@@ -1,133 +1,70 @@
 <template>
-  <div id="Home">
-    <h2>
-      <span>Bienvenido a Nuestro Season Hotels</span>
-    </h2>
-    <div class="container">
-  
-  <ul class="slider">
-    <li id="slide1">
-      <img src="https://i.ibb.co/GHC4J8j/Imagen6.png"/>
-    </li>
-    <li id="slide2">
-      <img src="https://i.ibb.co/WFRSMQM/Imagen7.png"/>
-    </li>
-    <li id="slide3">
-      <img src="https://i.ibb.co/6Hs3PBm/Imagen8.png"/>
-    </li>
+<div>
+  <div id="User">
 
-  </ul>
-  
-  <ul class="menu">
-    <li>
-      <a href="#slide1"></a>
-    </li>
-    <li>
-      <a href="#slide2"></a>
-    </li>
-     <li>
-      <a href="#slide3"></a>
-    </li>
-  </ul>
-  
-</div>
+    <div class="titulo">
+      <h2>
+        Hola <span> {{ username }}, </span> ¡Te damos la bienvenida!
+      </h2>
+    </div>
+
   </div>
+<div class="imagen">
+  <v-img
+  contain
+  lazy-src="https://i3.visitchile.com/img/GalleryContent/112184/Galerias_6.jpg"
+  max-height="600"
+  max-width="1000"
+  margin-right= center;
+  margin-left= center;
+  src="https://i3.visitchile.com/img/GalleryContent/112184/Galerias_6.jpg"
+></v-img>
+</div>
+</div>
+
 </template>
 
 <script>
-
+export default {
+  name: "User",
+  data: function () {
+    return {
+      username: "none",
+    };
+  },
+  created: function () {
+    this.username = this.$route.params.username;
+  },
+};
 </script>
 
 <style>
-#Home {
+#User {
   width: 100%;
   height: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: right;
-  align-items: center;
+  justify-content: center;
+  align-items: right;
 }
-#Home h2 {
+
+.imagen {
+  display: flex;
+  height: 71vh;
+  align-content: center;
+  margin: 0%;
+  padding: 0%;
+  justify-content: center;
+  align-items: center;
+  margin-right: center;
+  margin-left: center;
+}
+
+#User h2 {
   font-size: 50px;
   color: #283747;
 }
-#Home span {
+#User span {
   color: rgb(23, 20, 220);
   font-weight: bold;
-}
-body{
-  background-color: rgb(141, 124, 124);
-  font-family: sans-serif;
-}
-
-.container{
-  margin: auto;
-  background-color: rgba(255, 255, 255, 0.274);
-  width: 2000px;
-  padding: 30px;
-}
-
-ul, li {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-ul.slider{
-  position: relative;
-  
-  margin: auto;
-  width: 1080px;
-  height: 550px;
-}
-
-ul.slider li {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    opacity: 0;
-    width: inherit;
-    height: inherit;
-    transition: opacity .5s;
-    background:rgba(255, 255, 255, 0.356);
-}
-
-ul.slider li img{
-  width: 100%;
-  height: 550px;
-  object-fit: cover;
-}
-
-ul.slider li:first-child {
-    opacity: 1; /*Mostramos el primer <li>*/
-}
-
-ul.slider li:target {
-    opacity: 1; /*Mostramos el <li> del enlace que pulsemos*/
-}
-
-.menu{
-  text-align: center;
-  height: 0px;
-  
-
-  
-}
-
-.menu li{
-  display: inline-block;
-
-  
-}
-
-.menu li a{
-  
-  color: rgba(15, 0, 149, 0.226);
-
-  background-color: rgba(2, 0, 105, 0.171);
-  padding: 10px;
-
-  font-size: 1px;
-  border-radius: 100%;
 }
 </style>
